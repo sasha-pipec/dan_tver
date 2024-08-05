@@ -1,0 +1,356 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЧОП "ДАН"</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?version=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://myfonts.ru/myfonts?fonts=bewlay-br1-cyrillic" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<header>
+    <div class="header-top">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="">
+            <p>ЧОО “Дан”</p>
+        </div>
+        <div class="contacts">
+            <div class="contacts-item">
+                <img src="{% static 'images/phone.png' %}" alt="">
+                <p>
+                    Телефон
+                    <a href="tel:+79201883853">8-920-188-38-53</a>
+                </p>
+            </div>
+            <div class="contacts-item">
+                <img src="{% static 'images/email.png' %}" alt="">
+                <p>
+                    Эл.почта
+                    <a href="mailto:mikhajlov.ma@yandex.com">mikhajlov.ma@yandex.com</a>
+                </p>
+            </div>
+        </div>
+        <button id="open" class="burger-btn"><span></span><span></span><span></span></button>
+    </div>
+    <div class="header-bottom">
+        <div class="navigation">
+            <a href="#intro">Главная</a>
+            <a href="#rabota">Работа у нас</a>
+            <a href="#nagradi">Награды</a>
+            <a href="#preimushestva">Преимущества</a>
+            <a href="#academiya">Академия безопасности</a>
+            <a href="#contakti">Контакты</a>
+            <a href="#info-zakazchiki">Информация для заказчиков</a>
+            <a href="#galareya">Галерея</a>
+        </div>
+        <a class="link-button" href="#feedback">Оставить заявку</a>
+    </div>
+</header>
+<section id="intro" class="intro">
+    <div class="intro-content">
+        <h1>ООО ЧОО “ДАН”</h1>
+        <p>Осуществляем все разрешенные виды охранных услуг</p>
+        <h2>Также объявляется набор охранников!</h2>
+        <p>Узнайте о работе в нашей охранной организации и подайте заявку, чтобы стать частью нашей профессиональной
+            команды.</p>
+        <a href="#rabota">Узнать больше</a>
+    </div>
+</section>
+<section id="rabota" class="work-with text-section">
+    <h1>Работа у нас</h1>
+    <div class="text-info">
+        <p>Наша организация образована в 2007 году и имеет прозрачную историю существования. Мы предлагаем работу
+            охранником с лицензией и без лицензии (лицензируем в течение 2 недель), с компенсацией проезда и реальной
+            возможностью роста. Работа осуществляется на понятных объектах, а основная специализация - предоставление
+            охранных услуг частным компаниям, при этом тесно взаимодействуя с органами влясти различного уровня и
+            общественными организациями</p>
+        <p>За время работы на высоком качественном уровне осуществлена охрана таких объектов, как: «Тверской ДСК», ТГИЭК
+            им.А.Н.Коняева, ОАО «Тверьавтотранс», ГК «Автопремиум», Тверской Городской Думы, ТЦ
+            «Семь Морей», ТРЦ «РИО», ООО «Форум Тверь», мотель “Тверь”, ГБУЗ Тверской области “ДОКБ” и пр.</p>
+        <p class="red"><span>Важно!</span> В связи с тем, что мы оказываем охранные услуги на выском качественном
+            уровне, в нашем коллективе категорически неприемлем алкоголь! Если у вас с этим проблемы, дальше можно не
+            читать</p>
+        <a href="#feedback">Оставить заявку</a>
+    </div>
+</section>
+<section id="nagradi" class="swiper">
+    <div class="title-swiper">
+        <h1>Наши награды</h1>
+        <a href="{% static 'license.pdf' %}">Выписка из реестра лицензий <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.75 22C1.99375 22 1.34613 21.7305 0.807127 21.1915C0.268127 20.6525 -0.000914332 20.0053 2.33447e-06 19.25V15.125H2.75V19.25H19.25V15.125H22V19.25C22 20.0062 21.7305 20.6539 21.1915 21.1929C20.6525 21.7319 20.0053 22.0009 19.25 22H2.75ZM11 16.5L4.125 9.625L6.05 7.63125L9.625 11.2062V0H12.375V11.2062L15.95 7.63125L17.875 9.625L11 16.5Z" fill="#202020"/>
+        </svg>
+        </a>
+    </div>
+    <div class="swiper-container-docs">
+        <div class="swiper-wrapper">
+            {% for item in awards %}
+                <div class="swiper-slide docs"><img src="{{ item.image.url }}" alt="Image 1"></div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section id="preimushestva" class="advantages">
+    <div class="advantages-content">
+        <h1>Преимущества работы у нас</h1>
+        <div class="advantage-item">
+            <div class="item-top">
+                <img src="{% static 'images/item1.png' %}" alt="">
+                <h3>Бесплатное обучение сотрудников</h3>
+            </div>
+            <div class="item-bottom">
+                <p>Наша организация образована в 2007 году и имеет прозрачную историю существования. Мы предлагаем работу
+                    охранником с лицензией и без лицензии (лицензируем в течение 2 недель), с компенсацией проезда и
+                    реальной возможностью роста. Работа осуществляется на понятных объектах, а основная специализация -
+                    предоставление охранных услуг частным компаниям, при этом тесно взаимодействуя с органами влясти
+                    различного уровня и общественными организациями</p>
+            </div>
+        </div>
+        <div class="advantage-item">
+            <div class="item-top">
+                <img src="{% static 'images/item2.png' %}" alt="">
+                <h3>Спортивный зал</h3>
+            </div>
+            <div class="item-bottom">
+                <p>Мы ценим хорошую физическую подготовку сотрудников и даем возможность поддерживать свою форму. Для этого
+                    мы предоставляем свободное посещение в наш спортивный зал</p>
+            </div>
+        </div>
+        <div class="advantage-item">
+            <div class="item-top">
+                <img src="{% static 'images/item3.png' %}" alt="">
+                <h3>Заработная плата</h3>
+            </div>
+            <div class="item-bottom">
+                <p>Зарплата выдается два раза в месяц. Средняя зарплата охранника составляет от 2500 рублей за смену. Сумма
+                    складывается исходя из сложности объекта и характера выполняемых задач. Зарплата охранника 6 разряда
+                    может составлять 4500 за смену На ряде объектов решен вопрос с заказчиком о предоставлении 2-х разового
+                    питания сотрудникам</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="academiya" class="academy">
+    <div class="wrapper-academy">
+        <div class="academy-top">
+            <img src="{% static 'images/academy.png' %}" alt="">
+            <h1>Академия безопасности</h1>
+        </div>
+        <div class="academy-bottom">
+            <p>Наша организация образована в 2007 году и имеет прозрачную историю существования. Мы предлагаем работу
+                охранником с лицензией и без лицензии (лицензируем в течение 2 недель), с компенсацией проезда и
+                реальной возможностью роста. Работа осуществляется на понятных объектах, а основная специализация -
+                предоставление охранных услуг частным компаниям, при этом тесно взаимодействуя с органами влясти
+                различного уровня и общественными организациями</p>
+            <a href="http://www.akbez-tver.ru/">Подробнее</a>
+        </div>
+    </div>
+</section>
+<section id="contakti" class="contacts">
+    <h1>Наши контакты</h1>
+    <div class="contacts-wrapper">
+        <div class="contacts-text">
+            <div class="contact-item">
+                <img src="{% static 'images/contacts1.png' %}" alt="">
+                <p>ООО ЧОО “ДАН”<br> <span>Фактический адрес: Смоленский переулок, д. 9</span></p>
+            </div>
+            <div class="contact-item">
+                <img src="{% static 'images/contacts2.png' %}" alt="">
+                <p>8-920-188-38-53 <br> 8-910-930-45-27 <br> 8-4822-656-171</p>
+            </div>
+            <div class="contact-item">
+                <img src="{% static 'images/contacts3.png' %}" alt="">
+                <p>mikhajlov.ma@yandex.com</p>
+            </div>
+
+        </div>
+        <div class="contacts-img">
+            <img src="{% static 'images/map.png' %}" alt="">
+        </div>
+    </div>
+</section>
+
+<!--feedback-->
+<section id="feedback" class="feedback">
+    <div class="feedback-wrapper">
+        <h1>Заявка</h1>
+        <form action="{% url 'create_order' %}" method="post">
+            {% csrf_token %}
+            <div class="form-item"><p>ФИО</p> <input placeholder="Петров Иван Александрович" type="text" required name="fio"></div>
+            <div class="form-item"><p>Возраст</p><input placeholder="20" type="number" required name="age"></div>
+            <div class="form-item"><p>Наличие опыта или лицензии</p><input placeholder="3 разряд" type="text" required name="experience"></div>
+            <div class="form-item"><p>Номер телефона</p><input placeholder="+7 (ХХХ) ХХХ ХХ-ХХ" type="text" required name="phone_number"></div>
+            <label for="check"><input id="check" type="checkbox" required name="is_agreed">  Я согласен на обработку своих персональных данных</label>
+            <button class="submit" type="submit">
+                Оставить заявку
+            </button>
+            <p>Нажимая кнопку “Оставить заявку”, вы соглашаетесь с <a href="{% static 'politika.docx' %}" download>Политикой конфиденциальности</a> и обработкой персональных данных</p>
+        </form>
+    </div>
+</section>
+
+<section id="info-zakazchiki" class="info-text text-section">
+    <h1>Информация для заказчиков</h1>
+    <div>
+        <p>ООО ЧОО «Дан» в целях охраны Вашего объекта предлагает организовать комплекс
+            мероприятий, направленных на его защиту и безопасность, а также безопасность персонала и
+            клиентов.</p>
+        <ul>
+            <li>
+                Создание системы физической защиты объекта;
+            </li>
+            <li>Обеспечение охраны материальных ценностей;</li>
+            <li>Обеспечение внутриобъектового и пропускного режима на объекте;
+            </li>
+            <li>Контроль за соблюдением порядка в местах проведения массовых мероприятий;
+            </li>
+            <li>Проведение профилактических мероприятий по предотвращению террористических актов;</li>
+            <li>Обеспечение охраны и безопасности сотрудников предприятия;
+            </li>
+            <li>Предотвращение хищений сырья, комплектующих и готовой продукции;
+            </li>
+            <li>Обеспечение контроля за перемещением материальных средств;</li>
+            <li>Патрулирование территории;</li>
+            <li>Охрана периметра с  использованием ТСО;</li>
+        </ul>
+        <p>Так же, мы оказываем всестороннее содействие руководству в пресечении попыток совершения любых
+            противоправных действий, выполняем иные законные требования Заказчика.
+        </p>
+        <p>
+            За период нашего существования успешно реализованы несколько сложных, в т.ч. длительных
+            договоров личной охраны.
+        </p>
+        <p>
+            ООО ЧОО «Дан» имеет вооруженную служебным огнестрельным оружием и спецсредствами
+            группу немедленного реагирования на транспорте предприятия (ГБР), которая используется для
+            охраны, сопровождения персонала Заказчика, материальных ценностей при их транспортировке
+            Заказчиками.
+        </p>
+        <p>ООО ЧОО «Дан» является членом Ассоциации Охранных Предприятий «Единство»,
+            объединяющей более 10 крупных предприятий г. Твери и области (инф. на сайте
+            www.tversecurity.ru ). Группы немедленного реагирования Ассоциации осуществляют
+            взаимодействие.
+            Техническое и инновационное взаимодействие в области охранных систем осуществляется
+            совместно с ТЦ «Бастион».</p>
+        <span>
+            Сотрудничая с нам Вы можете рассчитывать на:
+            <ul>
+                <li>Индивидуальный подход;</li>
+                <li>Подбор оптимального комплекса охранных услуг с учетом Ваших пожеланий и финансовых
+                    рекомендаций;</li>
+                <li>Контроль качества предоставляемых услуг;</li>
+                <li>Гарантированное возмещение возможного материального ущерба.</li>
+            </ul>
+        </span>
+        <p>СТОИМОСТЬ УСЛУГ ПО ФИЗИЧЕСКОЙ ОХРАНЕ ОБЪЕКТОВ  определяется в каждом
+            конкретном случае на основе требований Заказчика.
+        </p>
+        <span>
+            Стоимость охранных услуг зависит от:
+            <ul>
+                <li>Расположения объекта;</li>
+                <li>Уровня защищенности объекта;</li>
+                <li>Времени работы охранников</li>
+                <li>Вооружения охранников и их экипировки;</li>
+                <li>Квалификации охранников.</li>
+            </ul>
+        </span>
+    </div>
+</section>
+<section id="galareya" class="swiper">
+    <h1>Галерея</h1>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for item in gallery %}
+            <div class="swiper-slide"><img src="{{ item.image.url }}" alt="Image 1"></div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<div class="burger-wrapper">
+    <div class="burger">
+        <div class="burger-top">
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="">
+                <p>ЧОО “Дан”</p>
+            </div>
+            <button id="close" class="burger-btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.0161 0.571699C18.4067 0.181179 19.0397 0.181179 19.4303 0.571699C19.8208 0.962232 19.8208 1.59539 19.4303 1.98591L11.4164 9.99977L19.4303 18.0136C19.8208 18.4042 19.8208 19.0374 19.4303 19.4279C19.0397 19.8184 18.4067 19.8184 18.0161 19.4279L10.0021 11.414L1.98836 19.4278C1.93955 19.4767 1.88694 19.5194 1.83148 19.556C1.44334 19.8123 0.915857 19.7695 0.57415 19.4278C0.183617 19.0374 0.183617 18.4042 0.57415 18.0136L8.588 9.99977L0.57415 1.98598C0.18363 1.59546 0.18363 0.962285 0.57415 0.571765C0.96467 0.181245 1.59784 0.181245 1.98836 0.571765L10.0021 8.58563L18.0161 0.571699Z" fill="#202020"/>
+                </svg>
+            </button>
+        </div>
+        <div class="burger-contacts">
+            <div class="contacts">
+                <div class="contacts-item">
+                    <img src="{% static 'images/phone.png' %}" alt="">
+                    <p>
+                        Телефон
+                        <a href="tel:+79201883853">8-920-188-38-53</a>
+                    </p>
+                </div>
+                <div class="contacts-item">
+                    <img src="{% static 'images/email.png' %}" alt="">
+                    <p>
+                        Эл.почта
+                        <a href="mailto:mikhajlov.ma@yandex.com">mikhajlov.ma@yandex.com</a>
+                    </p>
+                </div>
+            </div>
+            <a class="link-button" href="#feedback">Оставить заявку</a>
+        </div>
+        <div class="navigation">
+            <a href="#intro">Главная</a>
+            <a href="#rabota">Работа у нас</a>
+            <a href="#nagradi">Награды</a>
+            <a href="#preimushestva">Преимущества</a>
+            <a href="#academiya">Академия безопасности</a>
+            <a href="#contakti">Контакты</a>
+            <a href="#info-zakazchiki">Информация для заказчиков</a>
+            <a href="#galareya">Галерея</a>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-wrapper">
+        <div class="top">
+            <div class="navigation-footer">
+                <div class="block">
+                    <a href="#intro">Главная</a>
+                    <a href="#rabota">Работа у нас</a>
+                    <a href="#preimushestva">Преимущества</a>
+                    <a href="#academiya">Академия безопасности</a>
+                </div>
+                <div class="block">
+                    <a href="">Заявка</a>
+                    <a href="#info-zakazchiki">Информация для заказчиков</a>
+                    <a href="#galareya">Фотогалерея</a>
+                    <a href="">Политика конфиденциальности</a>
+                </div>
+            </div>
+            <div class="block last">
+                <div class="logo">
+                    <img src="{% static 'images/logo2.png' %}" alt="">
+                    <p>ЧОО “Дан”</p>
+                </div>
+                <p>Смоленский переулок, д. 9</p>
+                <p>8-920-188-38-53</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>
+                ООО ЧОО “ДАН” 2024. Тверь
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
