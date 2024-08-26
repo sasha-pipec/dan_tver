@@ -12,11 +12,15 @@ burgerBtnClose.addEventListener('click', () => {
     body.style.overflow = 'auto';
 });
 
+burgerWrapper.addEventListener('click', () => {
+    burgerWrapper.style.display = 'none';
+    body.style.overflow = 'auto';
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
         spaceBetween: 30,
-        loop: true,
     });
 
     var swiper2 = new Swiper('.swiper-container-docs', {
@@ -24,3 +28,32 @@ document.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 16,
     });
 });
+
+const header = document.querySelector('.header');
+header.classList.add('hidden')
+let prevScrollPos = 0;
+const handleScroll = () => {
+    if (window.innerWidth <= 768) {
+        document.documentElement.style.overflow = 'hidden';
+        return;
+    }
+
+    const currentScrollPos = window.scrollY;
+    const isScrollingDown = currentScrollPos > prevScrollPos;
+
+    if (isScrollingDown) {
+        header.classList.remove('hidden');
+    } else {
+        header.classList.add('hidden');
+    }
+
+    if (currentScrollPos > prevScrollPos) {
+        header.classList.remove('hidden');
+        prevScrollPos = currentScrollPos;
+    } else {
+        header.classList.add('hidden');
+        prevScrollPos = currentScrollPos;
+    }
+};
+
+window.addEventListener('scroll', handleScroll);

@@ -5,7 +5,7 @@ class Order(models.Model):
     fio = models.CharField(max_length=255, verbose_name='ФИО')
     age = models.IntegerField(verbose_name='Возраст')
     experience = models.TextField(verbose_name='Наличие опыта или лицензии')
-    phone_number = models.CharField(max_length=20, verbose_name='Номера телефона')
+    phone_number = models.CharField(max_length=20, verbose_name='Номер телефона')
     is_agreed = models.BooleanField(default=False, verbose_name='Согласие на обработку перс. данных')
     is_checked = models.BooleanField(default=False, verbose_name='Заявка просмотрена')
 
