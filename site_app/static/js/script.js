@@ -33,11 +33,6 @@ const header = document.querySelector('.header');
 header.classList.add('hidden')
 let prevScrollPos = 0;
 const handleScroll = () => {
-    if (window.innerWidth <= 768) {
-        document.documentElement.style.overflow = 'hidden';
-        return;
-    }
-
     const currentScrollPos = window.scrollY;
     const isScrollingDown = currentScrollPos > prevScrollPos;
 
