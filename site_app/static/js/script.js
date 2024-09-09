@@ -33,21 +33,19 @@ const header = document.querySelector('.header');
 header.classList.add('hidden')
 let prevScrollPos = 0;
 const handleScroll = () => {
+
     const currentScrollPos = window.scrollY;
-    const isScrollingDown = currentScrollPos > prevScrollPos;
 
-    if (isScrollingDown) {
-        header.classList.remove('hidden');
-    } else {
+    if(currentScrollPos < 150) {
         header.classList.add('hidden');
-    }
-
-    if (currentScrollPos > prevScrollPos) {
-        header.classList.remove('hidden');
-        prevScrollPos = currentScrollPos;
     } else {
-        header.classList.add('hidden');
-        prevScrollPos = currentScrollPos;
+        if (currentScrollPos > prevScrollPos) {
+            header.classList.remove('hidden');
+            prevScrollPos = currentScrollPos;
+        } else {
+            header.classList.add('hidden');
+            prevScrollPos = currentScrollPos;
+        }
     }
 };
 
