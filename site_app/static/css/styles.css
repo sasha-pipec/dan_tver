@@ -894,6 +894,10 @@ footer {
         width: auto !important;
     }
 
+    .docs img {
+        width: auto;
+    }
+
     .feedback-wrapper form {
         padding: 12px;
     }
